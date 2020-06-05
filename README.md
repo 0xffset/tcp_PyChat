@@ -1,4 +1,4 @@
-# tcp_PyChat v1.0.0.
+# tcp_PyChat 
 [![Build Status](https://travis-ci.com/RolEYder/tcp_PyChat.svg?branch=master)](https://travis-ci.com/RolEYder/tcp_PyChat)
 
 <img src="/docs/tcp_Pychat.gif" width="1000" height="500"/>
