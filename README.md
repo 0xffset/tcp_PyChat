@@ -1,8 +1,9 @@
-# tcp_PyChat
-
-
-
+# tcp_PyChat 
 [![Build Status](https://travis-ci.com/RolEYder/tcp_PyChat.svg?branch=master)](https://travis-ci.com/RolEYder/tcp_PyChat)
+
+<img src="/docs/tcp_Pychat.gif" width="1000" height="500"/>
+
+
 
 **tcp_Pychat** is a [IRC Server](https://es.wikipedia.org/wiki/Internet_Relay_Chat) that implement a MongoDB as storage writing on Python.
 
