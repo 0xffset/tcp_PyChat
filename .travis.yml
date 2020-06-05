@@ -13,4 +13,5 @@ install:
   - pip install -r requirements.txt
 # command to run tests
 script:
-  - pytest
+  - python3 pytchat_server -ip 127.0.0.1 -p 4444
+  - python3 pytchat_client -ip 127.0.0.1 -p 4444
