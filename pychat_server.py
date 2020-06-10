@@ -46,6 +46,7 @@ args = parser.parse_args()
 ip_address = args.ip
 port = args.port
 
+
 if ip_address and port:
     try:
         server = Server(str(ip_address), int(port))

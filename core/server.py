@@ -6,6 +6,7 @@ from core.colors import good
 from core.MongoDB import MongoDB
 
 
+
 class Server:
     """  Server class
          This class make the client-server connections and their broadcasting
@@ -23,9 +24,10 @@ class Server:
         self.server_socket.setsockopt(
             socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server_socket.bind((self.ip, self.port))
-        self.server_socket.listen(100)  
+        self.server_socket.listen(100)
+       
         print('''%s Waiting for connections... ''' % (good))
-
+        
     def is_running_port_open(self):
         """Check if already exists a connection in one port."""
         location = (self.ip, self.port)
@@ -47,36 +49,27 @@ class Server:
         while True:
 
             try:
-                message = conn.recv(2048)
-
+                message = conn.recv(2048).decode('utf-8')
+                
                 if message:
-                    print(''' %s %s <---> %s''' % (good, self.ip, message))
-                    message_to = message
-                    self.broadcasting_clients(message_to, conn)
+                    
+                    print(''' %s %s-%s''' % (good, self.ip, message))
+                    
 
-            except:
-                continue
+            except Exception as e:
+                print(e)
 
+   
     def server_connection(self):
         """ set connection's client """
         while True:
             conn, address = self.server_socket.accept()
-
             self.list_clients.append(conn)
-
+           
             print(''' %s %s connected''' % (good, self.ip))
             threading._start_new_thread(
                 self.thread_connections, (conn, address))
         conn.close()
         self.server_socket.close()
 
-    def broadcasting_clients(self, message, connection):
-        """ send the messages to all connected clients """
-        for clients in self.list_clients:
-
-            if clients != connection:
-                try:
-
-                    clients.send(message)
-                except:
-                    clients.close()
+    

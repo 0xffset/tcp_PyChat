@@ -15,6 +15,7 @@ import sys
 import argparse
 from core.colors import red, white, end, info, error, green
 import json
+import time
 
 with open('config.json', 'r') as f:
     config = json.load(f)
@@ -41,20 +42,23 @@ parser.add_argument('-ip', '--ip_address',
                     help='IP address to set the client connection', dest='ip')
 parser.add_argument(
     '-p', '--port', help='Port to set the client connection', dest='port')
+parser.add_argument(
+    '-n', '--nick-name', help='client nickname', dest='nick')
 args = parser.parse_args()
+
 
 ip_address = args.ip
 port = args.port
+nickname = args.nick
 
 
-if ip_address and port:
+if ip_address and port and nickname:
 
     try:
-        client = Client(str(ip_address), int(port))
+        client = Client(str(ip_address), int(port), nickname)
         client.get_connection_server()
-
     except Exception as identifier:
-        print(''' %s %s''' % (error, identifier))
+        print(( identifier))
 else:
     print(''' %s Error: Set ip address server and a port   ''' % (error))
     exit

@@ -1,5 +1,6 @@
 import socket
 import sys
+from datetime import datetime
 import select
 from core.colors import red, good
 from core.MongoDB import MongoDB
@@ -15,12 +16,14 @@ class Client:
         :type port: int
         :return: None
      """
-    def __init__(self, ip, port):
+    def __init__(self, ip, port, nickname):
         self.ip = ip
         self.port = port
+        self.nickname = nickname
         self.clients = {}
         self.sockets_list = []
         print(''' %s Host Name --> %s ''' % (good, socket.gethostname()))
+     
 
     def get_connection_server(self):
         """ Make the connection with the socket"""
@@ -39,13 +42,15 @@ class Client:
             for socks in read_sockets:
 
                 if socks == server_socket:
-
+                    
                     message = server_socket.recv(2048).decode('utf-8')
+                 
                     print('''%s %s''' % (good, message))
                 else:
-
                     message = sys.stdin.readline()
-                    server_socket.send(message.encode('utf-8'))
+                    date = f"[{datetime.now():%I:%M:%S}] "
+                    format_message = f"{date} {self.nickname} <> {message}"
+                    server_socket.send(format_message.encode('utf-8'))
                     sys.stdout.write('''%s %s : ''' % (good, self.ip))
                     sys.stdout.write(message)
-                    sys.stdout.flush()
+                   
