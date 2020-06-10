@@ -10,7 +10,7 @@
 
 
 # Releases!
-
+  - v1.0.1 | Fixed UTF-8 message encode, add nickname to the client connections and remove the client broadcasting.
   - Initial release
   
 
@@ -46,7 +46,7 @@ $ git clone https://github.com/RolEYder/tcp_PyChat.git
 $ cd tcp_PyChat
 $ pip3 install -r requirements.txt
 $ python3 pychat_server.py -ip 127.0.0.1 -p 4444
-$ python3 pychat_client.py -ip 127.0.0.1 -p 4444
+$ python3 pychat_client.py -ip 127.0.0.1 -p 4444 -n nick
 ```
 
 
@@ -67,9 +67,9 @@ where `-ip` is the ip connect IP address server and `-p` is the connect port.
 
 To run the `CLIENT` type:
 ```sh
-$ python3 pychat_client.py -ip 127.0.0.1 -p 4444
+$ python3 pychat_client.py -ip 127.0.0.1 -p 4444 -n nick
 ```
-where `-ip` is the ip connect IP address client and `-p` is the connect port. 
+where `-ip` is the ip connect IP address client, `-p` is the connect port and `-n` is the client nickname.
 
 
 
