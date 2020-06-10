@@ -36,7 +36,7 @@ Here the development-stack that we used to build this IRC Server:
 
 ### Quicky installation
 
-**tcp_PyChat** requires [Python](https://www.python.org/) v3.5+ to run.
+**tcp_PyChat** requires [Python](https://www.python.org/) v3.6+ to run.
 
 Install the all componets needed to run **tcp_PyChat**.
 Open your favorite Terminal and run these commands.
