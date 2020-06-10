@@ -43,7 +43,7 @@ Open your favorite Terminal and run these commands.
 
 ```sh
 $ git clone https://github.com/RolEYder/tcp_PyChat.git
-$ cd pychat
+$ cd tcp_PyChat
 $ pip3 install -r requirements.txt
 $ python3 pychat_server.py -ip 127.0.0.1 -p 4444
 $ python3 pychat_client.py -ip 127.0.0.1 -p 4444
