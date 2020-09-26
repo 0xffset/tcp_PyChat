@@ -82,7 +82,7 @@ where `-ip` is the ip connect IP address client, `-p` is the connect port and `-
 ### Author
 
  - Rogger G. D. (rolEYder) 
- -> Medium [rolEYder](https://medium.com/@rolEYder)
+ 
  
 
 License
